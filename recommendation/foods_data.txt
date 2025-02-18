@@ -1,0 +1,139 @@
+Food: تفاحة
+Ingredients: تفاحة
+Health Benefits: غنية بالفيتامينات والألياف، جيدة للهضم.
+Dietary Classification: نباتي، خالي من الجلوتين، منخفضة السكر
+Calories: 95 سعرة حرارية لكل تفاحة متوسطة
+Restrictions: لا يوجد
+
+Food: سلطة دجاج
+Ingredients: دجاج، خس، زيت زيتون، خل
+Health Benefits: غنية بالبروتين، منخفضة الكربوهيدرات، جيدة لبناء العضلات.
+Dietary Classification: غنية بالبروتين، منخفضة الكربوهيدرات، غير نباتية
+Calories: 350 سعرة حرارية لكل حصة
+Restrictions: لا يوجد
+
+Food: توست الأفوكادو
+Ingredients: أفوكادو، خبز قمح كامل
+Health Benefits: غنية بالدهون الصحية، تدعم صحة القلب.
+Dietary Classification: نباتي، خالي من الجلوتين، منخفضة الكربوهيدرات (إذا تم استخدام خبز خالي من الجلوتين)
+Calories: 300 سعرة حرارية لكل حصة
+Restrictions: لا يوجد
+
+Food: بيتزا
+Ingredients: دقيق، جبن، صلصة طماطم، بيبروني
+Health Benefits: غنية بالدهون والكربوهيدرات، لا يُوصى بها لفقدان الوزن.
+Dietary Classification: نباتية (بدون اللحم)
+Calories: 500 سعرة حرارية لكل شريحة
+Restrictions: يحتوي على جلوتين، عالي الدهون
+
+Food: سمك مشوي
+Ingredients: سمك، ليمون، زيت زيتون
+Health Benefits: غني بالأوميغا-3، مفيد لصحة القلب.
+Dietary Classification: نباتي، خالي من الجلوتين
+Calories: 200 سعرة حرارية لكل حصة
+Restrictions: لا يوجد
+
+Food: حمص
+Ingredients: حمص، طحينة، زيت زيتون، ليمون
+Health Benefits: غني بالبروتين والألياف، يعزز الهضم.
+Dietary Classification: نباتي، خالي من الجلوتين
+Calories: 250 سعرة حرارية لكل حصة
+Restrictions: لا يوجد
+
+Food: برجر لحم
+Ingredients: لحم مفروم، خبز، خس، طماطم، جبن
+Health Benefits: غني بالبروتين، يحتوي على نسبة عالية من الدهون.
+Dietary Classification: غير نباتي
+Calories: 600 سعرة حرارية لكل برجر
+Restrictions: يحتوي على جلوتين، يحتوي على دهون
+
+Food: شاورما دجاج
+Ingredients: دجاج، خبز، طحينة، طماطم
+Health Benefits: غني بالبروتين، مناسب للوجبات السريعة.
+Dietary Classification: غير نباتي
+Calories: 400 سعرة حرارية لكل حصة
+Restrictions: يحتوي على جلوتين
+
+Food: سلطة الفواكه
+Ingredients: تفاح، موز، برتقال، فراولة
+Health Benefits: غنية بالفيتامينات والألياف، تحسن من صحة البشرة.
+Dietary Classification: نباتي، خالي من الجلوتين
+Calories: 150 سعرة حرارية لكل حصة
+Restrictions: لا يوجد
+
+Food: شوربة عدس
+Ingredients: عدس، طماطم، بصل، زيت زيتون
+Health Benefits: غنية بالبروتين والألياف، تساعد في تحسين الهضم.
+Dietary Classification: نباتي، خالي من الجلوتين
+Calories: 180 سعرة حرارية لكل حصة
+Restrictions: لا يوجد
+
+Food: أرز بالدجاج
+Ingredients: أرز، دجاج، بصل، زيت نباتي
+Health Benefits: يحتوي على البروتين والكربوهيدرات، يوفر طاقة.
+Dietary Classification: غير نباتي
+Calories: 450 سعرة حرارية لكل حصة
+Restrictions: لا يوجد
+
+Food: عصير برتقال
+Ingredients: برتقال
+Health Benefits: غني بفيتامين C، يقوي الجهاز المناعي.
+Dietary Classification: نباتي، خالي من الجلوتين
+Calories: 120 سعرة حرارية لكل كوب
+Restrictions: لا يوجد
+
+Food: فطيرة دجاج
+Ingredients: دجاج، دقيق، بيض، حليب
+Health Benefits: غني بالبروتين، يحتوي على سعرات حرارية عالية.
+Dietary Classification: غير نباتي
+Calories: 350 سعرة حرارية لكل حصة
+Restrictions: يحتوي على جلوتين
+
+Food: كريب
+Ingredients: دقيق، بيض، حليب، سكر
+Health Benefits: يحتوي على الكربوهيدرات والسعرات الحرارية.
+Dietary Classification: غير نباتي
+Calories: 200 سعرة حرارية لكل قطعة
+Restrictions: يحتوي على جلوتين
+
+Food: مربى الفراولة
+Ingredients: فراولة، سكر، جيلاتين
+Health Benefits: يحتوي على السكر، مناسب للحلويات.
+Dietary Classification: نباتي
+Calories: 100 سعرة حرارية لكل ملعقة
+Restrictions: يحتوي على سكر
+
+Food: مكسرات
+Ingredients: لوز، جوز، فستق
+Health Benefits: غنية بالدهون الصحية والألياف، تساعد في تقليل الكوليسترول.
+Dietary Classification: نباتي، خالي من الجلوتين
+Calories: 200 سعرة حرارية لكل حصة
+Restrictions: لا يوجد
+
+Food: زبادي
+Ingredients: حليب، زبادي
+Health Benefits: غني بالكالسيوم، يساعد في تحسين الهضم.
+Dietary Classification: غير نباتي
+Calories: 150 سعرة حرارية لكل حصة
+Restrictions: يحتوي على جلوتين
+
+Food: شوربة الدجاج بالكريمة
+Ingredients: دجاج، كريمة، بصل، جزر
+Health Benefits: غني بالبروتين، يساعد في تقوية المناعة.
+Dietary Classification: غير نباتي
+Calories: 300 سعرة حرارية لكل حصة
+Restrictions: يحتوي على جلوتين
+
+Food: توست مع زبدة الفول السوداني
+Ingredients: خبز قمح كامل، زبدة فول سوداني
+Health Benefits: غني بالبروتين، يساعد في تعزيز الطاقة.
+Dietary Classification: نباتي، خالي من الجلوتين (إذا تم استخدام خبز خالي من الجلوتين)
+Calories: 350 سعرة حرارية لكل حصة
+Restrictions: يحتوي على جلوتين (إذا تم استخدام خبز يحتوي على جلوتين)
+
+Food: عصير جزر
+Ingredients: جزر
+Health Benefits: غني بفيتامين A، يعزز من صحة العين.
+Dietary Classification: نباتي، خالي من الجلوتين
+Calories: 60 سعرة حرارية لكل كوب
+Restrictions: لا يوجد

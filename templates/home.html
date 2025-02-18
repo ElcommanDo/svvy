@@ -1,0 +1,454 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMB Healthcare</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f9;
+            color: #333;
+            overflow-x: hidden;
+        }
+        header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space out elements */
+    padding: 20px;
+    background: #007bff;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+header img.logo {
+    height: 70px;
+    width: auto;
+    border-radius: 5px;
+}
+
+header .btn {
+    text-decoration: none;
+    background: white;
+    color: #007bff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+header .btn:hover {
+    background: #0056b3;
+    color: white;
+}
+        header h1 {
+            font-size: 36px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        /* Form Section */
+        .form-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 40px 0;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container {
+            width: 45%;
+            background: #007bff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            color: white;
+            animation: slideUp 1.5s ease-out;
+            margin-bottom: 20px;
+        }
+
+        .form-container h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 8px;
+            background-color: #f1f1f1;
+        }
+
+        textarea {
+            resize: vertical;
+            height: 150px;
+        }
+
+        input[type="submit"] {
+            background-color: #ff5c8d;
+            border: none;
+            padding: 15px;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #ff2a5b;
+        }
+
+        /* Result Sections */
+        .result-section {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .result-section p {
+            padding: 10px;
+            font-weight: bold;
+            background-color: #f1f1f1;
+            border-radius: 10px;
+            max-width: 400px;
+            margin: 10px auto;
+        }
+
+        .comment-result {
+            background-color: #e0f7fa; /* Light blue for positive */
+        }
+
+        .comment-result-negative {
+            background-color: #ffebee; /* Light red for negative */
+        }
+
+        .recommendation-result {
+            background-color: #e8f5e9; /* Light green */
+        }
+
+        /* Animation Effects */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Healthcare Image Section */
+        .healthcare-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 0;
+            background: #f7f7f7;
+        }
+
+        .healthcare-img {
+            width: 50%;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            transition: transform 0.4s ease;
+        }
+
+        .healthcare-img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Developers Section */
+        .developers-section {
+            background: #ffffff;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .developers-section h2 {
+            font-size: 30px;
+            color: #007bff;
+            margin-bottom: 30px;
+        }
+
+        .developer-cards {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .developer-card {
+            width: 20%;
+            background: #007bff;
+            border-radius: 10px;
+            padding: 20px;
+            color: white;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .developer-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .developer-card img {
+            width: 100%;
+            border-radius: 20%;
+            margin-bottom: 15px;
+            height: 450px;
+        }
+
+        .developer-card h4 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .developer-card p {
+            font-size: 14px;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            .form-section {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .form-container {
+                width: 80%;
+                margin-bottom: 30px;
+            }
+
+            .healthcare-img {
+                width: 80%;
+            }
+
+            .developer-card {
+                width: 45%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 28px;
+            }
+
+            .form-container {
+                padding: 20px;
+            }
+
+            input,
+            textarea {
+                padding: 10px;
+            }
+
+            input[type="submit"] {
+                padding: 12px;
+                font-size: 16px;
+            }
+
+            .developer-card {
+                width: 90%;
+                margin-bottom: 20px;
+            }
+
+            .developer-card img {
+                width: 80px;
+                height: 80px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="{% static 'img/logo.jpg' %}"  alt="SMB Healthcare Logo" class="logo">
+    <h1>SMB Healthcare</h1>
+    <a href="{%url 'admin:index' %}" target="_blank" class="btn">admin</a>
+        
+    </header>
+
+    <!-- Forms Section -->
+    <div class="form-section">
+        <!-- Comment Form -->
+        <div class="form-container">
+            <h2>Make a Comment</h2>
+            <form action="#" id="comment-form">
+                <input type="text" name="username" placeholder="Your Name" required>
+                <textarea id="co" name="comment" placeholder="Your Comment" required></textarea>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+
+        <!-- Recommendation Form -->
+        <div class="form-container">
+            <h2>Recommendation Test</h2>
+            <form action="#" id="recommendation-form">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <textarea id="recom" name="recommendation" placeholder="Your Recommendation" required></textarea>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+
+    <!-- Result Sections -->
+    <div class="result-section" id="comment-result">
+        <!-- Comment Result Display -->
+        <p class="comment-result" id="comment-analysis-result">Waiting for comment analysis...</p>
+    </div>
+    <div class="result-section" id="recommendation-result">
+        <!-- Recommendation Result Display -->
+        <p class="recommendation-result" id="recommendation-reply">Waiting for recommendation reply...</p>
+    </div>
+
+    <!-- Healthcare Image Section -->
+    <div class="healthcare-section">
+        <img src="{%static 'img/logo.jpg'%}" alt="Healthcare Image" class="healthcare-img">
+    </div>
+
+    <!-- Developers Section -->
+    <div class="developers-section">
+        <h2>Meet Our Developers</h2>
+        <div class="developer-cards">
+            <div class="developer-card">
+                <img src="{%static 'img/mina.jpg' %}" alt="Developer 1">
+                <h4>Mina Bahgat Daniel</h4>
+                <p>Lead Developer - Backend Specialist</p>
+            </div>
+            <div class="developer-card">
+                <img src="{%static 'img/remonda.jpg' %}" alt="Developer 2">
+                <h4>Remonda Bassem</h4>
+                <p>Frontend Developer - UI/UX Expert</p>
+            </div>
+            <div class="developer-card">
+                <img src="{%static 'img/basmla.jpg' %}" alt="Developer 3">
+                <h4>Basmala Essam </h4>
+                <p>Full Stack Developer - API Master</p>
+            </div>
+            <div class="developer-card">
+                <img src="{%static 'img/shahd.jpg' %}" alt="Developer 3">
+                <h4>Shahd Hussien</h4>
+                <p>Full Stack Developer - API Master</p>
+            </div>
+        </div>
+    </div>
+
+ <script>
+    document.getElementById("recommendation-form").addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent default form submission
+
+        let userMessage = document.getElementById("recom").value.trim();
+        let resultDisplay = document.getElementById("recommendation-reply");
+
+        // Send request as JSON
+        fetch("/recommendation/", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "X-CSRFToken": getCSRFToken(), // CSRF token for Django security
+            },
+            body: JSON.stringify({ message: userMessage }) // Convert data to JSON
+        })
+        .then(response => response.json())
+        .then(data => {
+            resultDisplay.textContent = data.response; // Ensure you use 'response' from JSON
+            resultDisplay.style.backgroundColor = "#f1f1f1"; // Default color
+        })
+        .catch(error => {
+            console.error("Error:", error);
+            resultDisplay.textContent = "حدث خطأ. يرجى المحاولة مرة أخرى.";
+            resultDisplay.style.backgroundColor = "#ffdddd"; // Light red for error
+        });
+
+        event.target.reset(); // Clear form fields
+    });
+
+    // Function to get CSRF token from cookies (needed for Django POST requests)
+    function getCSRFToken() {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== "") {
+            document.cookie.split(";").forEach(cookie => {
+                let trimmedCookie = cookie.trim();
+                if (trimmedCookie.startsWith("csrftoken=")) {
+                    cookieValue = trimmedCookie.substring("csrftoken=".length);
+                }
+            });
+        }
+        return cookieValue;
+    }
+</script>
+<script>
+    document.getElementById("comment-form").addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent default form submission
+
+        let userComment = document.getElementById("co").value.trim();
+        let resultcomment = document.getElementById("comment-analysis-result");
+
+        // Send request as JSON
+        fetch("/comment/", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "X-CSRFToken": getCSRFToken(), // CSRF token for Django security
+            },
+            body: JSON.stringify({ message: userComment }) // Convert data to JSON
+        })
+        .then(response => response.json())
+        .then(data => {
+            resultcomment.textContent = data.response; // Ensure you use 'response' from JSON
+            resultcomment.style.backgroundColor = "#f1f1f1"; // Default color
+        })
+        .catch(error => {
+            console.error("Error:", error);
+            resultcomment.textContent = "حدث خطأ. يرجى المحاولة مرة أخرى.";
+            resultcomment.style.backgroundColor = "#ffdddd"; // Light red for error
+        });
+
+        event.target.reset(); // Clear form fields
+    });
+
+    // Function to get CSRF token from cookies (needed for Django POST requests)
+    function getCSRFToken() {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== "") {
+            document.cookie.split(";").forEach(cookie => {
+                let trimmedCookie = cookie.trim();
+                if (trimmedCookie.startsWith("csrftoken=")) {
+                    cookieValue = trimmedCookie.substring("csrftoken=".length);
+                }
+            });
+        }
+        return cookieValue;
+    }
+</script>
+
+</body>
+
+</html>
