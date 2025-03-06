@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, HttpResponse
 from app.models import CustomUser
 # Create your views here.
 from django.shortcuts import get_object_or_404, render
-from langchain_groq import ChatGroq
+
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, logout, authenticate
