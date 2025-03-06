@@ -113,6 +113,8 @@
 
     <header>
         <a href="/" class="home-btn">⬅ Visit Our WebSite</a>
+        <a  target="_blank" href="https://huggingface.co/spaces/vignaharish03/Birds-Classifier" class="home-btn">⬅ Check For animals</a>
+    
     </header>
 
     <div class="card">
@@ -125,46 +127,6 @@
         <p class="info">Blood Type: {{ user.blood }}</p>
         <p class="info">Address: {{ user.address }}</p>
         <p class="info">Email: {{ user.email }}</p>
-        <p class="info">
-            Facebook Page: 
-            <a  style="text-decoration: none;" target="_blank" href="{{ user.facebook_page }}">
-                🔗
-            </a>
-        </p>
-        <p class="info">Parent Phone: {{ user.parent_phone }}</p>
-
-        <label>Health Insurance:</label>
-        <textarea class="info" disabled>{{ user.health_insurance }}</textarea>
-
-        <label>Symptoms:</label>
-        <textarea class="info" disabled>{{ user.symptoms }}</textarea>
-
-        <label>Allergies:</label>
-        <textarea class="info" disabled>{{ user.allergies }}</textarea>
-
-        <label>Medications:</label>
-        <textarea class="info" disabled>{{ user.medications }}</textarea>
-
-        <label>Past Medical History:</label>
-        <textarea class="info" disabled>{{ user.past_medical_history }}</textarea>
-
-        <label>Last Oral Intake:</label>
-        <textarea class="info" disabled>{{ user.last_oral_intake }}</textarea>
-
-        <label>Events:</label>
-        <textarea class="info" disabled>{{ user.events }}</textarea>
-
-        <label>Health Data:</label>
-        <textarea class="info" disabled>{{ user.health_data }}</textarea>
-
-        <label>Chronic Disease:</label>
-        <textarea class="info" disabled>{{ user.chronic_disease }}</textarea>
-
-        <label>Test Results:</label>
-        <textarea class="info" disabled>{{ user.test_result }}</textarea>
-
-        <label>Doctor Notes:</label>
-        <textarea class="info" disabled>{{ user.doctor_notes }}</textarea>
     </div>
 
 </body>
