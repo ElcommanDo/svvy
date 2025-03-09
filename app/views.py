@@ -6,6 +6,7 @@ from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, logout, authenticate
+from datetime import datetime
 
 def get_user_data(request, id):
     user = get_object_or_404(CustomUser, id=id)
@@ -80,3 +81,12 @@ def login_view(request):
         
     return render(request, 'login.html')
 
+
+def report(request, temp, soil):
+    current_date = datetime.now().strftime('%Y-%m-%d')
+    context = {
+        "temperature": temp,  # استبدل بالقيمة الفعلية
+        "soil_moisture": soil,  # استبدل بالقيمة الفعلية
+        "current_date": datetime.today().strftime('%Y-%m-%d'),
+    }
+    return render(request, 'report.html', context)
