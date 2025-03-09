@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -129,6 +129,216 @@
         <p class="info">Email: {{ user.email }}</p>
     </div>
 
+</body>
+
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer Statistics Dashboard</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #e0f7fa, #b9fbc0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            overflow-y: auto;
+        }
+
+        header {
+            width: 100%;
+            background: linear-gradient(to right, #007bff, #00c4cc);
+            padding: 15px;
+            text-align: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .home-btn {
+            text-decoration: none;
+            color: white;
+            background: #0056b3;
+            padding: 10px 15px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .home-btn:hover {
+            background: #003d7a;
+            transform: translateY(-2px);
+        }
+
+        .dashboard {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            padding: 30px;
+            width: 800px;
+            margin-top: 100px;
+            backdrop-filter: blur(5px);
+        }
+
+        h2 {
+            margin: 0 0 20px;
+            color: #1a3c34;
+            font-size: 28px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .sensor-data {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .data-box {
+            background: linear-gradient(45deg, #007bff, #00c4cc);
+            border-radius: 15px;
+            padding: 15px;
+            width: 45%;
+            color: white;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .data-box:hover {
+            transform: scale(1.05);
+        }
+
+        .data-box h3 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .data-box p {
+            margin: 10px 0 0;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .chart-container {
+            margin-top: 30px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="/" class="home-btn">⬅ Home</a>
+        <span>Farmer Statistics Dashboard</span>
+        <a target="_blank" href="https://huggingface.co/spaces/vignaharish03/Birds-Classifier" class="home-btn">⬅ Check For Animals</a>
+    </header>
+
+    <div class="dashboard">
+        <h2>Real-Time Farm Monitoring</h2>
+        <div class="sensor-data">
+            <div class="data-box" id="temp-box">
+                <h3>Temperature (°C)</h3>
+                <p id="temp-value">0</p>
+            </div>
+            <div class="data-box" id="moisture-box">
+                <h3>Soil Moisture (%)</h3>
+                <p id="moisture-value">0</p>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <canvas id="sensorChart"></canvas>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Random value generators
+        const tempValues = Array.from({ length: 10 }, () => Math.floor(Math.random() * (35 - 21 + 1)) + 21);
+        const moistureValues = [100, 98, 34, 45, 35, 12].concat(
+            Array.from({ length: 4 }, () => Math.floor(Math.random() * 100))
+        );
+
+        // Update sensor readings
+        function updateReadings() {
+            const tempIndex = Math.floor(Math.random() * tempValues.length);
+            const moistureIndex = Math.floor(Math.random() * moistureValues.length);
+            document.getElementById('temp-value').textContent = tempValues[tempIndex];
+            document.getElementById('moisture-value').textContent = moistureValues[moistureIndex];
+        }
+
+        // Chart configuration
+        const ctx = document.getElementById('sensorChart').getContext('2d');
+        const sensorChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: Array.from({ length: 10 }, (_, i) => `T-${9 - i}`),
+                datasets: [{
+                    label: 'Temperature (°C)',
+                    data: tempValues,
+                    borderColor: '#ff6b6b',
+                    backgroundColor: 'rgba(255, 107, 107, 0.2)',
+                    fill: true,
+                    tension: 0.4
+                }, {
+                    label: 'Soil Moisture (%)',
+                    data: moistureValues,
+                    borderColor: '#4ecdc4',
+                    backgroundColor: 'rgba(78, 205, 196, 0.2)',
+                    fill: true,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100,
+                        grid: { color: 'rgba(0, 0, 0, 0.05)' }
+                    },
+                    x: { grid: { display: false } }
+                },
+                plugins: {
+                    legend: { position: 'top' },
+                    title: { display: true, text: 'Sensor Readings Over Time', font: { size: 16 } }
+                }
+            }
+        });
+
+        // Update readings every 2 seconds
+        setInterval(() => {
+            updateReadings();
+            const tempIndex = Math.floor(Math.random() * tempValues.length);
+            const moistureIndex = Math.floor(Math.random() * moistureValues.length);
+            sensorChart.data.datasets[0].data.shift();
+            sensorChart.data.datasets[0].data.push(tempValues[tempIndex]);
+            sensorChart.data.datasets[1].data.shift();
+            sensorChart.data.datasets[1].data.push(moistureValues[moistureIndex]);
+            sensorChart.update();
+        }, 2000);
+
+        // Initial update
+        updateReadings();
+    </script>
 </body>
 
 </html>
